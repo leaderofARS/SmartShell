@@ -1,0 +1,21 @@
+include_guard(GLOBAL)
+
+function(smartshell_set_warnings target)
+    if(MSVC)
+        target_compile_options(${target} INTERFACE /W4 /wd4251 /wd4275)
+    else()
+        target_compile_options(${target} INTERFACE -Wall -Wextra -Wpedantic -Wconversion -Wshadow)
+    endif()
+
+    if(SMARTSHELL_WARNINGS_AS_ERRORS)
+        if(MSVC)
+            target_compile_options(${target} INTERFACE /WX)
+        else()
+            target_compile_options(${target} INTERFACE -Werror)
+        endif()
+    endif()
+endfunction()
+
+add_library(smartshell_warnings INTERFACE)
+set_target_properties(smartshell_warnings PROPERTIES EXPORT_NAME warnings)
+smartshell_set_warnings(smartshell_warnings)
