@@ -4,6 +4,8 @@ add_executable(SmartShell::app ALIAS SmartShell)
 target_link_libraries(SmartShell PRIVATE
     smartshell::options
     smartshell::warnings
+    smartshell::core
+    smartshell::platform_windows
     smartshell::ui
     smartshell::session
 )

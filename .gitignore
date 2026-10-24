@@ -1,6 +1,44 @@
+# Build output directories
 /out/
 /build/
+/build-*/
+/cmake-build-*/
+
+# CMake transient files & user presets
 /CMakeUserPresets.json
 /compile_commands.json
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
 
-/roadmap
+# Compiler artifacts
+*.obj
+*.o
+*.lib
+*.a
+*.exp
+*.ilk
+*.pdb
+*.exe
+*.dll
+
+# IDE / Editor directories & user settings
+/.vs/
+/.vscode/
+/.idea/
+*.sln.docstates
+*.user
+*.suo
+
+# Operating System files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Temporary & Log files
+*.log
+*.tmp
+
+# Specifications / Local Roadmap
+/roadmap/
